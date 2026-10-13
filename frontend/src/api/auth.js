@@ -1,29 +1,12 @@
 import axios from 'axios';
 
-const axios = require('axios');
-
-axios.get('https://serenityhub.up.railway.app:5173')
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-
-  axios.put('https://serenityhub.up.railway.app:5173', data)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
 
 export async function registerUser(data) {
-  return await axios.post(`https://serenityhub.up.railway.app:5173/register`, data);
+  return await axios.post(`${import.meta.env.VITE_HOST_SERENITY}/register`, data);
 }
 
 export async function login(email, password) {
-  return await axios.post(`https://serenityhub.up.railway.app:5173/login`, {
+  return await axios.post(`${import.meta.env.VITE_HOST_SERENITY}/login`, {
     email,
     password,
   });

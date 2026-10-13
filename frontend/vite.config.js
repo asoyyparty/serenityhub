@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
               },
             },
             {
-              urlPattern: 'https://backend-serenityhub-production.up.railway.app:5500',
+              urlPattern: 'http://localhost:5500',
               handler: 'StaleWhileRevalidate',
               options: {
                 cacheName: 'serenitylink-image',
@@ -59,6 +59,12 @@ export default defineConfig(({ mode }) => {
         },
       }),
     ],
+    server: {
+      allowedHosts: ['serenityhub.asoyydev.id'],
+    },
+    preview: {
+      allowedHosts: ['serenityhub.asoyydev.id'],
+    },
     build: {
       outDir: 'dist',
       sourcemap: true,

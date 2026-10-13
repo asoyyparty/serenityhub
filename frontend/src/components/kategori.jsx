@@ -25,7 +25,7 @@ const Categories = ({ onCategoryClick, selectedCategory }) => {
         <div data-aos='fade-zoom-in' data-aos-easing='ease-in-back' data-aos-duration='1000' data-aos-delay='200' data-aos-offset='0'>
           <h1 className='text-center text-2xl md:text-5xl out text-primary-600 font-extrabold mb-8 uppercase'>kategori</h1>
           <div className='flex flex-wrap justify-start '>
-            {categoryData.map((category, index) => (
+            {categoryData?.map((category, index) => (
               <div 
                 key={index} 
                 onClick={() => onCategoryClick && onCategoryClick(category.name)}

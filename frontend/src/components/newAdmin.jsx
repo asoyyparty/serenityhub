@@ -14,7 +14,7 @@ export default function NewAdmin() {
   });
 
   const handleSubmit = async (e) => {
-    e.preventDefault;
+    e.preventDefault();
 
     if (newAdmin.password !== newAdmin.confirmPassword) {
       toast.warning(`Pasword harus sama`, {

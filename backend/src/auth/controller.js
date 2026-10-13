@@ -45,7 +45,7 @@ async function officerRegister(req, res, next) {
     if (err && (err.name === 'SequelizeValidationError' || err.name === 'SequelizeUniqueConstraintError')) {
       return formatSequelizeError(err, res);
     }
-    next(err);
+    return res.status(500).json({ error: 1, message: err.message || String(err) });
   }
 }
 
@@ -73,7 +73,7 @@ async function adminRegister(req, res, next) {
     if (err && (err.name === 'SequelizeValidationError' || err.name === 'SequelizeUniqueConstraintError')) {
       return formatSequelizeError(err, res);
     }
-    next(err);
+    return res.status(500).json({ error: 1, message: err.message || String(err) });
   }
 }
 
@@ -92,7 +92,7 @@ async function register(req, res, next) {
     if (err && (err.name === 'SequelizeValidationError' || err.name === 'SequelizeUniqueConstraintError')) {
       return formatSequelizeError(err, res);
     }
-    next(err);
+    return res.status(500).json({ error: 1, message: err.message || String(err) });
   }
 }
 

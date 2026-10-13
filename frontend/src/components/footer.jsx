@@ -61,7 +61,7 @@ function Footer() {
           </div>
           <hr className='bg-white' />
           <div className='flex items-center justify-between px-4 py-4 text-white md:px-8'>
-            <h5 className='text-xs md:text-base'>Developed by <a className='text-blue-500' href='https://qoisabdulqudus.netlify.app/'>Qois Abdul Qudus</a> 2024 v1.0 © <a className='text-blue-500' href='https://serangkota.go.id/'>Pemkot Kota Serang</a></h5>
+            <h5 className='text-xs md:text-base'>Developed by <a className='text-blue-500' href='https://qoisabdulqudus.netlify.app/'>Asoyy Dev</a> 2024 v1.0 © <a className='text-blue-500' href='https://serangkota.go.id/'>Pemkot Kota Serang</a></h5>
             <button onClick={scrollToTop} className={`transition duration-200 hover:text-blue-500 text-xs md:text-base ${isVisible ? 'block' : 'hidden'}`}>
               Back to top
             </button>
