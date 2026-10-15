@@ -10,24 +10,43 @@ export default defineConfig(({ mode }) => {
       react(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+        includeAssets: [
+          'robots.txt',
+          'apple-touch-icon.png',
+          'apple-touch-icon-180x180.png',
+          'pwa-192x192.png',
+          'pwa-512x512.png',
+          'favicon.png',
+        ],
         manifest: {
           name: 'SerenityHub App',
           short_name: 'SerenityHub',
-          theme_color: '#333',
+          theme_color: '#333333',
           background_color: '#ffffff',
           display: 'standalone',
-          orientation:"portrait",
-          scope:'/',
-          start_url:'/',
-          icons:[
+          orientation: 'portrait',
+          scope: '/',
+          start_url: '/',
+          icons: [
             {
-              src: "/logo_512.jpg",
-              sizes: "512x512",
-              type: "image/png",
-              purpose: "any maskable"
-            }
-          ]
+              src: '/pwa-192x192.png',
+              sizes: '192x192',
+              type: 'image/png',
+              purpose: 'any',
+            },
+            {
+              src: '/pwa-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'any',
+            },
+            {
+              src: '/pwa-512x512.png',
+              sizes: '512x512',
+              type: 'image/png',
+              purpose: 'maskable',
+            },
+          ],
         },
         workbox: {
           runtimeCaching: [
@@ -60,9 +79,11 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     server: {
+      port: 8002,
       allowedHosts: ['serenityhub.asoyydev.id'],
     },
     preview: {
+      port: 8002,
       allowedHosts: ['serenityhub.asoyydev.id'],
     },
     build: {
